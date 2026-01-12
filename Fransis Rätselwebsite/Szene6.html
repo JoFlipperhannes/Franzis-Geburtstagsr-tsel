@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franzis Geburtstagsrätsel</title>
+    <style>
+        body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .story {
+      text-align: justify; /* sorgt für Blocksatz */
+      max-width: 600px; /* optional – begrenzt die Breite auf größeren Bildschirmen */
+      margin: auto; /* zentriert den Text auf großen Displays */
+    }
+    </style>
+</head>
+<body>
+ <div class="story">
+<h1>Vierter Sektor</h1>
+
+<p><strong>Worträtsel:</strong><br><br>
+Es duftet blumig, doch eine Rose ist es nicht.<br>
+Es ist flüssig, doch trinken kann man es nicht.<br>
+Es macht müde, doch Melatonin ist es nicht.<br>
+Es ist ein Öl, doch damit kochen kann man nicht.<br>
+Es kommt aus der Flasche, doch ein Geist ist es nicht.
+</p>
+
+<!-- Eingabefeld -->
+<input type="text" id="antwort" placeholder="Antwort hier...">
+
+<br>
+<button onclick="checkAnswer()">Antwort prüfen</button>
+
+<div id="ergebnis"></div>
+
+<script>
+// Richtige Lösung:
+const loesung = "lavendelöl";
+
+function checkAnswer(){
+ const eingabe = document.getElementById("antwort").value.trim().toLowerCase();
+
+ if(eingabe === loesung){
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:#4CAF50'>Richtig! Juhu!<br>Nasenaffen leben ausschließlich auf Borneo.<br>" +
+     "<button onclick=\"window.location.href='Szene7.html'\">Weiter zum fünften Sektor</button>";
+ } else {
+   document.getElementById('ergebnis').innerHTML =
+     "<span style='color:red'>Leider nicht richtig.</span>";
+ }
+}
+</script>
+
+
+
+ </div>
+</body>
+
+</html>

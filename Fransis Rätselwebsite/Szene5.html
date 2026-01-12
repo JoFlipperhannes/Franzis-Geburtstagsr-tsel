@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franzis Geburtstagsrätsel</title>
+    <style>
+        body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .story {
+      text-align: justify; /* sorgt für Blocksatz */
+      max-width: 600px; /* optional – begrenzt die Breite auf größeren Bildschirmen */
+      margin: auto; /* zentriert den Text auf großen Displays */
+    }
+    </style>
+</head>
+<body>
+ <div class="story">
+
+<h1>Dritter Sektor</h1>
+
+<div class="quiz">
+
+<p><strong>Quiz:</strong></p>
+
+<!-- Frage 1 -->
+<div class="frage">Wie heißt das Mädchen, das Maik und Tschick auf einem Schrottplatz treffen?</div>
+<label><input type="radio" name="f1" value="a"> a) Isa</label>
+<label><input type="radio" name="f1" value="b"> b) Tatjana</label>
+<label><input type="radio" name="f1" value="c"> c) Lia</label>
+
+<!-- Frage 2 -->
+<div class="frage">Wie heißt das Auto, mit dem Tschick und Maik durchbrennen?</div>
+<label><input type="radio" name="f2" value="a"> a) Käfer</label>
+<label><input type="radio" name="f2" value="b"> b) Trabbi</label>
+<label><input type="radio" name="f2" value="c"> c) Lada</label>
+
+<!-- Frage 3 -->
+<div class="frage">Welche Farbe hat Amélis Kleid aus „Die fabelhafte Welt der Amélie“?</div>
+<label><input type="radio" name="f3" value="a"> a) Grün</label>
+<label><input type="radio" name="f3" value="b"> b) Rot</label>
+<label><input type="radio" name="f3" value ="c"> c) Schwarz</label>
+
+<!-- Frage 4 -->
+<div class ="frage">Welche Farben sind auf dem Albumcover „Rubber Soul“ prägnant?</div>
+<label><input type ="radio" name ="f4" value ="a"> a) Orange, Weiß, Schwarz.</label>
+<label><input type ="radio" name ="f4"value ="b"> b) Orange, Dunkelgrün.</label>
+<label><input type ="radio"name ="f4"value ="c"> c) Schwarz und Weiß.</label>
+
+<button onclick = "checkAnswers()">Antworten prüfen</button>
+
+<div id = "ergebnis"></div>
+
+<script>
+// Richtige Antworten:
+const loesungen = ["a","c","b","b"];
+
+function checkAnswers(){
+ let korrekt = true;
+
+ for(let i=0;i<loesungen.length;i++){
+   const frageName = "f"+(i+1);
+   const ausgewaehlt = document.querySelector('input[name="'+frageName+'"]:checked');
+   if(!ausgewaehlt || ausgewaehlt.value !== loesungen[i]){
+     korrekt = false; break;
+   }
+ }
+
+ if(korrekt){
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:#4CAF50'>Juhu! Alle Antworten richtig!<br>Nasenaffen sind tagaktive Waldbewohner.</span><br><br>" +
+     "<button onclick=\"window.location.href='Szene6.html'\">Weiter zum vierten Sektor</button>";
+ } else {
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:red'>Leider nicht ganz richtig.</span>";
+ }
+}
+</script>
+
+
+
+ </div>
+</body>
+</html>

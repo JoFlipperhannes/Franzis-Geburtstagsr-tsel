@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franzis Geburtstagsrätsel</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .bilder-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .bilder-grid img {
+      width: 100%;
+      border-radius: 8px;
+      border: 2px solid #ccc;
+    }
+
+
+
+     
+  </style>
+</head>
+<body>
+ <div class="story">
+<h1>Fünfter Sektor</h1>
+
+<p><strong>Vier Bilder – ein Wort:</strong><br>Was zeigen diese vier Bilder gemeinsam?</p>
+
+<!-- Hier kommen deine vier Bilder -->
+<div class="bilder-grid">
+   <img src="Bild1.jpeg" alt="Bild 1">
+   <img src="Bild2.jpeg" alt="Bild 2">
+   <img src="Bild3.jpeg" alt="Bild 3">
+   <img src="Bild4.jpeg" alt="Bild 4">
+</div>
+
+<!-- Eingabefeld -->
+<input type ="text" id ="antwort" placeholder ="Antwort hier...">
+
+<br>
+<button onclick ="checkAnswer()">Antwort prüfen</button>
+
+<div id ="ergebnis"></div>
+
+<script>
+// Richtige Lösung:
+const loesung = "hanoi";
+
+function checkAnswer(){
+ const eingabe = document.getElementById("antwort").value.trim().toLowerCase();
+
+ if(eingabe === loesung){
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:#4CAF50'>Richtig! Juhu!<br>Nasenaffen werde durch die Regewaldrodung bedroht.<br>" +
+     "<button onclick=\"window.location.href='Szene8.html'\">Weiter zum sechsten Sektor</button>";
+ } else {
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:red'>Leider falsch!</span>";
+ }
+}
+</script>
+
+ </div>
+</body>
+</html>

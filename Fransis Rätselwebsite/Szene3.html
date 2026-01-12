@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franzis Geburtstagsrätsel</title>
+    <style>
+        body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .story {
+      text-align: justify; /* sorgt für Blocksatz */
+      max-width: 600px; /* optional – begrenzt die Breite auf größeren Bildschirmen */
+      margin: auto; /* zentriert den Text auf großen Displays */
+    }
+    </style>
+</head>
+<body>
+    <div class="story">
+    <h1>Erster Sektor. </h1>
+<p>Löse das Worträtsel!</p>
+<p> Tipp: Schreibe alles klein. Umlaute werden mit Vokal+e gebildet.</p>
+<div id="raetsel">
+  
+  <div class="frage">Bahnhof in Wien:</div>
+  <input type="text" id="f1">
+
+  <div class="frage">Ausdruck der Hässlichkeit (A):</div>
+  <input type="text" id="f2">
+
+  <div class="frage">Du (Holländisch):</div>
+  <input type="text" id="f3">
+
+  <div class="frage">Werden stummgemacht und gefesselt:</div>
+  <input type="text" id="f4">
+
+  <div class="frage">Trauer (Ding mit den Federn):</div>
+  <input type="text" id="f5">
+
+  <div class="frage">Farbe unseres Bauwagens (Greot):</div>
+  <input type="text" id="f6">
+
+  <div class="frage">Tabaksorte:</div>
+   <input type="text" id="f7">
+
+   <div class="frage">Spaßgetränk:</div>
+   <input type="text" id="f8">
+
+   <div class="frage">Japanisches Zahlenrätsel:</div>
+   <input type="text" id="f9">
+
+   <div class="frage">Geschichtslehrer Maiks und Tschicks (Nachname):</div>
+   <input type ="text" id ="f10">
+   
+</div>
+
+
+<button onclick ="checkAnswers()">Antworten prüfen ✅</button>
+
+<div id ="ergebnis"></div>
+    </div>
+
+<script>
+// Richtige Antworten
+const loesungen = [
+ "westbahnhof",
+ "schirch",
+ "je",
+ "piraten",
+ "kraehe",
+ "gruen",
+ "canuma",
+ "spezi",
+ "sudoku",
+ "wagenbach"
+];
+
+function checkAnswers() {
+ let korrekt = true;
+
+ for(let i=0; i<loesungen.length; i++){
+   const eingabe = document.getElementById("f"+(i+1)).value.trim().toLowerCase();
+   if(eingabe !== loesungen[i]) korrekt = false; 
+ }
+
+ if(korrekt){
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:#4CAF50'>Super! Wusstest du, dass Nasenaffen überaus gute Schwimmer sind?</strong></span><br><br>" +
+     "<button onclick=\"window.location.href='Szene4.html'\">Weiter zum nächsten Sektor</button>";
+ } else {
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:red'>❌ Leider nicht richtig.</span>";
+ }
+}
+
+</script>
+</body>
+</html>
