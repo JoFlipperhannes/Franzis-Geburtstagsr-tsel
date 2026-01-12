@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franzis Geburtstagsrätsel</title>
+    <style>
+        body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .story {
+      text-align: justify; /* sorgt für Blocksatz */
+      max-width: 600px; /* optional – begrenzt die Breite auf größeren Bildschirmen */
+      margin: auto; /* zentriert den Text auf großen Displays */
+    }
+    </style>
+</head>
+<body>
+ <div class="story">
+<h1>Sechster Sektor</h1>
+
+<p>Du hörst nun einen Songausschnitt rückwärts.<br>Schaffst du es, ihn zu erraten?</p>
+
+<!-- Rückwärts abgespielte Audiodatei -->
+<audio controls>
+  <source src="Audio.mp3" type="audio/mpeg">
+  Dein Browser unterstützt kein Audioelement.
+</audio>
+
+<br><br>
+
+<input type="text" id="antwort" placeholder="Deine Antwort hier...">
+<br>
+<button onclick="checkAnswer()">Antwort prüfen</button>
+
+<div id="ergebnis"></div>
+
+<script>
+// Richtige Lösung:
+const loesung = "com mais de 30";
+
+function checkAnswer(){
+ const eingabe = document.getElementById("antwort").value.trim().toLowerCase();
+ if(eingabe === loesung){
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:#4CAF50'>Juhu! Richtig!<br>Nasenaffen ernähren sich hauptsaächlich von Blättern und Früchten.<br>" +
+     "<button onclick=\"window.location.href='Szene9.html'\">Weiter zum nächsten Sektor</button>";
+ } else {
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:red'>Leider falsch.</span>";
+ }
+}
+</script>
+ </div>
+</body>
+</html>

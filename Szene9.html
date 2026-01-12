@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franzis Geburtstagsrätsel</title>
+    <style>
+        body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .story {
+      text-align: justify; /* sorgt für Blocksatz */
+      max-width: 600px; /* optional – begrenzt die Breite auf größeren Bildschirmen */
+      margin: auto; /* zentriert den Text auf großen Displays */
+    }
+    </style>
+</head>
+<body>
+ <div class="story">
+
+    <h1>Siebter Sektor.</h1>
+
+<div class="textblock">
+<p><strong>Worträtsel:</strong><br><br>
+Das bist du:<br><br>
+Du bist einfach du, und eins sei dir gewiss;<br>
+du bist es, das Gegenteil von dein Nichts.
+</p>
+</div>
+
+<!-- Eingabefeld -->
+<input type="text" id="antwort" placeholder="Antwort hier...">
+
+<br>
+<button onclick="checkAnswer()">Antwort prüfen</button>
+
+<div id="ergebnis"></div>
+
+<script>
+// Richtige Lösung:
+const loesung = "mein alles";
+
+function checkAnswer(){
+ const eingabe = document.getElementById("antwort").value.trim().toLowerCase();
+
+ if(eingabe === loesung){
+   document.getElementById("ergebnis").innerHTML =
+     "<span style='color:#4CAF50'>Juhu! Du bist es!<br>Nasenaffen Spielen total gerne mit Scheren.<br>" +
+     "<button onclick=\"window.location.href='Szene10.html'\">➡️ Zum Nasenaffen.</button>";
+ } else {
+   document.getElementById('ergebnis').innerHTML =
+     "<span style='color:red'>Leider nicht richtig!</span>";
+ }
+}
+</script>
+
+</body>
+</html>

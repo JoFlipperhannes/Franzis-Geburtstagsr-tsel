@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franzis Geburtstagsrätsel</title>
+    <style>
+        body {
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .story {
+      text-align: justify; /* sorgt für Blocksatz */
+      max-width: 600px; /* optional – begrenzt die Breite auf größeren Bildschirmen */
+      margin: auto; /* zentriert den Text auf großen Displays */
+    }
+    </style>
+</head>
+<body>
+ <div class="story">
+<h1>Das große Finale: Schere Stein Papier.</h1>
+
+<p><strong>Nasenaffe:</strong> Nasenaffe: Hääh, Hääöäh! – Ach du bist es schon wieder, willst du etwa schon wieder verlieren:<br>
+
+
+<!-- Spielbuttons -->
+<div id="game">
+   <button class="button" onclick="play('Schere')">Schere</button>
+   <button class="button" onclick="play('Stein')">Stein</button>
+   <button class="button" onclick="play('Papier')">Papier</button>
+
+   <div id="result"></div>
+</div>
+
+<script>
+// Der Nasenaffe wählt IMMER Schere
+const nasenaffeChoice = "Schere";
+
+function play(playerChoice){
+ let resultText = "";
+
+ if(playerChoice === nasenaffeChoice){
+   resultText = "Beide wählen Schere – Unentschieden!";
+ } else if(playerChoice === "Stein"){
+   resultText = "Du wählst Stein – der Nasenaffe wählt Schere.<br><strong>Du hast gewonnen!</strong>";
+ } else if(playerChoice === "Papier"){
+   resultText = "Du wählst Papier– der Nasenaffe wählt Schere.<br><strong>Nasenaffe gewinnt!</strong>";
+ }
+
+ document.getElementById("result").innerHTML = resultText;
+
+ // Wenn Spieler gewinnt -> kleine Abschlussmeldung
+ if (playerChoice === "Stein") {
+  document.getElementById("result").innerHTML += `
+     <br><br>Du hast gewonnen!<br>
+     <button class='button' onclick="window.location.href='Szene12.html'">
+       Öffne den Briefumschlag!
+     </button>`;
+}
+ if(playerChoice === "Stein"){
+   setTimeout(()=>{
+     document.getElementById("result").innerHTML += "<br><br>Der Nasenaffe gibt den Umschlag und stapft mit lautem HÄÄÖÖHÄ in das Dickicht. <br><Du hast es geschafft!</strong>";
+   },1500);
+ }
+}
+</script>
+ </div>
+</body>
+</html>
